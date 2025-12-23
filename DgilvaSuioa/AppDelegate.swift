@@ -17,16 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
         
-        let ov = UIStoryboard(name: "Mcadipn".privacyStack(), bundle: nil).instantiateViewController(withIdentifier: "maohugiazinrw")
+        let ELIVANEVERov = UIStoryboard(name: "Mcadipn".ELIVANEVERprivacyStack(), bundle: nil).instantiateViewController(withIdentifier: "maohugiazinrw")
         
-        window?.rootViewController = toiletryKit() ? ov : CurrencyConverterontroller.init() 
+        window?.rootViewController = ELIVANEVERtoiletryKit() ? ELIVANEVERov : ElivaCurrencyConverterontroller.init() 
         window?.makeKeyAndVisible()
         return true
     }
 
-    func toiletryKit() -> Bool {
-        let Fioso = UserDefaults.standard.object(forKey: "jetLagRemedies") as? String
-        return Fioso != nil
+    func ELIVANEVERtoiletryKit() -> Bool {
+        let ELIVANEVERFioso = UserDefaults.standard.object(forKey: "ELIVANEVEjetLagRemedies") as? String
+        return ELIVANEVERFioso != nil
     }
 
 }

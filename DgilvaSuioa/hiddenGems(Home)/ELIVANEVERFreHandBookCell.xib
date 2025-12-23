@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="273" id="KGk-i7-Jjw" customClass="FreHandBookCell" customModule="DgilvaSuioa" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="273" id="KGk-i7-Jjw" customClass="ELIVANEVERFreHandBookCell" customModule="DgilvaSuioa" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="474" height="273"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -20,7 +20,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hdx-FV-aXT">
                         <rect key="frame" x="16" y="6" width="442" height="261"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="droneFootage" translatesAutoresizingMaskIntoConstraints="NO" id="cbs-QT-1ms">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELIVANEVEdroneFootage" translatesAutoresizingMaskIntoConstraints="NO" id="cbs-QT-1ms">
                         <rect key="frame" x="416" y="26" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="Gua-8Y-Del"/>
@@ -30,8 +30,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhB-xP-GFv">
                         <rect key="frame" x="16" y="215" width="442" height="52"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rk-N9-UNe">
-                                <rect key="frame" x="14" y="16" width="375" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Rk-N9-UNe">
+                                <rect key="frame" x="14" y="26" width="375" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                             <constraint firstAttribute="height" constant="30" id="qCG-WQ-39N"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" backgroundImage="interactiveMaps"/>
+                        <state key="normal" backgroundImage="ELIVANEVEinteractiveMaps"/>
                     </button>
                 </subviews>
                 <constraints>
@@ -71,16 +71,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="artGalleries" destination="YhB-xP-GFv" id="wVk-vb-ciE"/>
-                <outlet property="etiquetteTips" destination="dPK-K1-gbf" id="8YD-Tk-2D1"/>
-                <outlet property="localTraditions" destination="3Rk-N9-UNe" id="zj1-Sz-RAx"/>
-                <outlet property="seasonalEvents" destination="hdx-FV-aXT" id="v0n-eF-w6y"/>
+                <outlet property="ELIVANEVERartGalleries" destination="YhB-xP-GFv" id="wVk-vb-ciE"/>
+                <outlet property="ELIVANEVERetiquetteTips" destination="dPK-K1-gbf" id="8YD-Tk-2D1"/>
+                <outlet property="ELIVANEVERlocalTraditions" destination="3Rk-N9-UNe" id="zj1-Sz-RAx"/>
+                <outlet property="ELIVANEVERseasonalEvents" destination="hdx-FV-aXT" id="v0n-eF-w6y"/>
             </connections>
             <point key="canvasLocation" x="212.21374045801525" y="100.35211267605634"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="droneFootage" width="32" height="32"/>
-        <image name="interactiveMaps" width="30" height="30"/>
+        <image name="ELIVANEVEdroneFootage" width="32" height="32"/>
+        <image name="ELIVANEVEinteractiveMaps" width="30" height="30"/>
     </resources>
 </document>

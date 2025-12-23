@@ -27,12 +27,12 @@
         <!--Roam Assistsentroller-->
         <scene sceneID="ixB-Tf-dSx">
             <objects>
-                <viewController id="5FJ-29-yYc" customClass="RoamAssistsentroller" customModule="DgilvaSuioa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5FJ-29-yYc" customClass="ELIVANEVERRoamAssistsentroller" customModule="DgilvaSuioa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hP1-gs-vpl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dressCode" translatesAutoresizingMaskIntoConstraints="NO" id="moY-xL-v17">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELIVANEVEdressCode" translatesAutoresizingMaskIntoConstraints="NO" id="moY-xL-v17">
                                 <rect key="frame" x="16" y="71" width="249" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="249" id="79E-GE-IBU"/>
@@ -46,9 +46,9 @@
                                     <constraint firstAttribute="width" constant="32" id="PiM-V7-dmI"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="jetLagRemedies"/>
+                                <state key="normal" image="ELIVANEVEjetLagRemedies"/>
                                 <connections>
-                                    <action selector="meditationSpots:" destination="5FJ-29-yYc" eventType="touchUpInside" id="ihS-3O-OEA"/>
+                                    <action selector="ELIVANEVERmeditationSpots:" destination="5FJ-29-yYc" eventType="touchUpInside" id="ihS-3O-OEA"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nrk-Tw-k8h">
@@ -71,7 +71,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMg-GF-xOh">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="climateGuide" translatesAutoresizingMaskIntoConstraints="NO" id="IpI-fa-OSa">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELIVANEVEclimateGuide" translatesAutoresizingMaskIntoConstraints="NO" id="IpI-fa-OSa">
                                                 <rect key="frame" x="16" y="8" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="9oD-ao-yKe"/>
@@ -95,8 +95,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vol-Y9-RHx">
                                                 <rect key="frame" x="78" y="176" width="281" height="52"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzB-Cw-3Sm">
-                                                        <rect key="frame" x="14" y="16" width="214" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzB-Cw-3Sm">
+                                                        <rect key="frame" x="14" y="26" width="214" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -168,9 +168,9 @@
                                                     <constraint firstAttribute="width" constant="30" id="dhe-O0-ReU"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="interactiveMaps"/>
+                                                <state key="normal" image="ELIVANEVEinteractiveMaps"/>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="travelGadgets" translatesAutoresizingMaskIntoConstraints="NO" id="7ja-Ue-mLP">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELIVANEVEtravelGadgets" translatesAutoresizingMaskIntoConstraints="NO" id="7ja-Ue-mLP">
                                                 <rect key="frame" x="317" y="54" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="OqQ-H8-J99"/>
@@ -289,21 +289,21 @@
                             <constraint firstItem="UjP-0q-ArB" firstAttribute="trailing" secondItem="hP1-gs-vpl" secondAttribute="trailing" id="w4J-xx-rfM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="carnivalTipsOP1" selectedImage="carnivalTips1" id="101-6g-GNx"/>
+                    <tabBarItem key="tabBarItem" title="" image="ELIVANEVEcarnivalTipsOP1" selectedImage="ELIVANEVEcarnivalTips1" id="101-6g-GNx"/>
                     <connections>
-                        <outlet property="beachCleanup" destination="a7n-iK-Rqv" id="X8r-Io-PKC"/>
-                        <outlet property="birdSanctuaries" destination="g2Y-sw-hPA" id="mQD-Cg-LOq"/>
-                        <outlet property="birdSanctuaries1" destination="an5-2y-SQG" id="0p7-qg-NNT"/>
-                        <outlet property="birdSanctuaries2" destination="QYo-d2-5Vh" id="MLh-N7-rHR"/>
-                        <outlet property="bookstoreCrawl" destination="nrk-Tw-k8h" id="4mf-We-dyw"/>
-                        <outlet property="fairTrade" destination="fzB-Cw-3Sm" id="y8D-2I-ZNM"/>
-                        <outlet property="souvenirIdeas" destination="MRc-Cj-LQb" id="6MO-Xh-nPh"/>
-                        <outlet property="thriftStores" destination="9Js-qo-oy8" id="ltD-vv-pQc"/>
-                        <outlet property="travelPodcast" destination="Vol-Y9-RHx" id="qgh-o1-1Mp"/>
-                        <outlet property="treehouseRetreats" destination="gEa-gV-Yzg" id="rDm-TX-iRw"/>
-                        <outlet property="whaleWatching" destination="FHp-7l-dbh" id="S6P-vJ-f3u"/>
-                        <outlet property="whaleWatching1" destination="Dxi-1X-wfp" id="KEf-c0-rZf"/>
-                        <outlet property="whaleWatching2" destination="8dr-Yf-zSL" id="e0Z-vJ-cop"/>
+                        <outlet property="ELIVANEVERbeachCleanup" destination="a7n-iK-Rqv" id="X8r-Io-PKC"/>
+                        <outlet property="ELIVANEVERbirdSanctuaries" destination="g2Y-sw-hPA" id="mQD-Cg-LOq"/>
+                        <outlet property="ELIVANEVERbirdSanctuaries1" destination="an5-2y-SQG" id="0p7-qg-NNT"/>
+                        <outlet property="ELIVANEVERbirdSanctuaries2" destination="QYo-d2-5Vh" id="MLh-N7-rHR"/>
+                        <outlet property="ELIVANEVERbookstoreCrawl" destination="nrk-Tw-k8h" id="4mf-We-dyw"/>
+                        <outlet property="ELIVANEVERfairTrade" destination="fzB-Cw-3Sm" id="y8D-2I-ZNM"/>
+                        <outlet property="ELIVANEVERsouvenirIdeas" destination="MRc-Cj-LQb" id="6MO-Xh-nPh"/>
+                        <outlet property="ELIVANEVERthriftStores" destination="9Js-qo-oy8" id="ltD-vv-pQc"/>
+                        <outlet property="ELIVANEVERtravelPodcast" destination="Vol-Y9-RHx" id="qgh-o1-1Mp"/>
+                        <outlet property="ELIVANEVERtreehouseRetreats" destination="gEa-gV-Yzg" id="rDm-TX-iRw"/>
+                        <outlet property="ELIVANEVERwhaleWatching" destination="FHp-7l-dbh" id="S6P-vJ-f3u"/>
+                        <outlet property="ELIVANEVERwhaleWatching1" destination="Dxi-1X-wfp" id="KEf-c0-rZf"/>
+                        <outlet property="ELIVANEVERwhaleWatching2" destination="8dr-Yf-zSL" id="e0Z-vJ-cop"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Hz-Ua-F3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -313,7 +313,7 @@
         <!--Trail Talktsentroller-->
         <scene sceneID="yeK-O8-XqA">
             <objects>
-                <viewController id="zMs-vH-w0G" customClass="TrailTalktsentroller" customModule="DgilvaSuioa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zMs-vH-w0G" customClass="ELIVANEVERTrailTalktsentroller" customModule="DgilvaSuioa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l8f-ma-Euu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,9 +336,9 @@
                                     <constraint firstAttribute="height" constant="32" id="F9F-6X-usT"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="travelPillow"/>
+                                <state key="normal" image="ELIVANEVEtravelPillow"/>
                                 <connections>
-                                    <action selector="extremeSports:" destination="zMs-vH-w0G" eventType="touchUpInside" id="n1H-fq-GwJ"/>
+                                    <action selector="ELIVANEVERextremeSports:" destination="zMs-vH-w0G" eventType="touchUpInside" id="n1H-fq-GwJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4I-Ko-Cvg">
@@ -348,7 +348,7 @@
                                     <constraint firstAttribute="width" constant="32" id="fMf-Qn-aIh"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="waterproofGear"/>
+                                <state key="normal" image="ELIVANEVEVwaterproofGear"/>
                                 <connections>
                                     <action selector="wildlifeConservation:" destination="zMs-vH-w0G" eventType="touchUpInside" id="GJ9-oF-QKR"/>
                                 </connections>
@@ -367,24 +367,24 @@
                             <constraint firstItem="36J-jX-naV" firstAttribute="trailing" secondItem="dFB-tA-gKA" secondAttribute="trailing" id="xjq-lN-coN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="carnivalTipsOP2" selectedImage="carnivalTips2" id="BdI-9G-3Pk"/>
+                    <tabBarItem key="tabBarItem" title="" image="ELIVANEVEcarnivalTipsOP2" selectedImage="ELIVANEVEcarnivalTips2" id="BdI-9G-3Pk"/>
                     <connections>
-                        <outlet property="bookstoreCrawl" destination="36J-jX-naV" id="vKK-4M-8GT"/>
+                        <outlet property="ELIVANEVERbookstoreCrawl" destination="36J-jX-naV" id="vKK-4M-8GT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3b-2L-lrW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2285.5999999999999" y="693.10344827586209"/>
         </scene>
-        <!--Travel Diarytsentroller-->
+        <!--Travel Diarytroller-->
         <scene sceneID="zC0-nR-7FS">
             <objects>
-                <viewController id="1ZF-tv-al8" customClass="TravelDiarytsentroller" customModule="DgilvaSuioa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1ZF-tv-al8" customClass="ELIVANEVERTravelDiarytroller" customModule="DgilvaSuioa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zVa-zm-3t6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toiletryKit" translatesAutoresizingMaskIntoConstraints="NO" id="Exl-ON-aIw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELIVANEVEtoiletryKit" translatesAutoresizingMaskIntoConstraints="NO" id="Exl-ON-aIw">
                                 <rect key="frame" x="16" y="64" width="49" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="JtK-Pf-7R3"/>
@@ -398,9 +398,9 @@
                                     <constraint firstAttribute="width" constant="37" id="zRd-kt-SRn"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="eyeFDSMask"/>
+                                <state key="normal" image="ELIVANEVEeyeFDSMask"/>
                                 <connections>
-                                    <action selector="glampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="iA2-Ir-M1G"/>
+                                    <action selector="ELIVANEVERglampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="iA2-Ir-M1G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kP-3y-aAm">
@@ -410,12 +410,12 @@
                                     <constraint firstAttribute="height" constant="37" id="MkA-Vy-de0"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="Group 163385"/>
+                                <state key="normal" image="ELIVANEVEGroup163385"/>
                                 <connections>
-                                    <action selector="glampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="oDJ-Mi-z50"/>
+                                    <action selector="ELIVANEVERglampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="oDJ-Mi-z50"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="acoustic" translatesAutoresizingMaskIntoConstraints="NO" id="wZD-W3-bFq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELIVANEVERacoustic" translatesAutoresizingMaskIntoConstraints="NO" id="wZD-W3-bFq">
                                 <rect key="frame" x="16" y="102" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="szS-BO-qkS"/>
@@ -434,7 +434,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Anan" image="highlighter" catalog="system"/>
                                 <connections>
-                                    <action selector="glampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="kaI-OR-9E8"/>
+                                    <action selector="ELIVANEVERglampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="kaI-OR-9E8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqA-fO-Lym">
@@ -445,9 +445,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="   My Blance" image="sanitizerWipes" backgroundImage="sunriseAlerts"/>
+                                <state key="normal" title="   My Blance" image="ELIVANEVEsanitizerWipes" backgroundImage="ELIVANEVEsunriseAlerts"/>
                                 <connections>
-                                    <action selector="glampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="Z6O-RL-8cE"/>
+                                    <action selector="ELIVANEVERglampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="Z6O-RL-8cE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="80" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L51-57-1Xq">
@@ -459,7 +459,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Follow"/>
                                 <connections>
-                                    <action selector="glampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="fj5-uL-6in"/>
+                                    <action selector="ELIVANEVERglampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="fj5-uL-6in"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="90" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6h-yc-yql">
@@ -468,7 +468,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Fans"/>
                                 <connections>
-                                    <action selector="glampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="Ksy-m8-sf4"/>
+                                    <action selector="ELIVANEVERglampingSites:" destination="1ZF-tv-al8" eventType="touchUpInside" id="Ksy-m8-sf4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyw-kV-qvb">
@@ -477,7 +477,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sdjioxdvd" translatesAutoresizingMaskIntoConstraints="NO" id="odp-ei-w4W">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ELIVANEVEsdjioxdvd" translatesAutoresizingMaskIntoConstraints="NO" id="odp-ei-w4W">
                                 <rect key="frame" x="144" y="307" width="87" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="HFn-gN-SNY"/>
@@ -521,12 +521,12 @@
                             <constraint firstItem="PCQ-PD-crx" firstAttribute="centerX" secondItem="wZD-W3-bFq" secondAttribute="centerX" id="zoM-Fi-1rD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="carnivalTipsOP3" selectedImage="carnivalTips3" id="A8q-GS-GgQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="ELIVANEVEcarnivalTipsOP3" selectedImage="ELIVANEVEcarnivalTips3" id="A8q-GS-GgQ"/>
                     <connections>
-                        <outlet property="digitalNomad" destination="L51-57-1Xq" id="cCT-dq-K35"/>
-                        <outlet property="meditationSpots" destination="f6h-yc-yql" id="RmY-Zg-YT1"/>
-                        <outlet property="rvParks" destination="PCQ-PD-crx" id="hmq-6e-dha"/>
-                        <outlet property="sunsetLocations" destination="wZD-W3-bFq" id="W7O-n2-Rrs"/>
+                        <outlet property="ELIVANEVERdigitalNomad" destination="L51-57-1Xq" id="cCT-dq-K35"/>
+                        <outlet property="ELIVANEVERmeditationSpots" destination="f6h-yc-yql" id="RmY-Zg-YT1"/>
+                        <outlet property="ELIVANEVERrvParks" destination="PCQ-PD-crx" id="hmq-6e-dha"/>
+                        <outlet property="ELIVANEVERsunsetLocations" destination="wZD-W3-bFq" id="W7O-n2-Rrs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxg-rt-YdQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -536,14 +536,14 @@
         <!--Hidden Gemsentroller-->
         <scene sceneID="vrM-vi-9CY">
             <objects>
-                <viewController id="MJD-zh-sgC" customClass="HiddenGemsentroller" customModule="DgilvaSuioa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MJD-zh-sgC" customClass="ELIVANEVERHiddenGemsentroller" customModule="DgilvaSuioa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qf4-sF-mE5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="HHU-O3-GiU"/>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.10196078431372549" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="carnivalTipsOP" selectedImage="carnivalTips" id="p25-Gi-L4p"/>
+                    <tabBarItem key="tabBarItem" title="" image="ELIVANEVEcarnivalTipsOP" selectedImage="ELIVANEVEcarnivalTips" id="p25-Gi-L4p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snb-FC-pgM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -576,28 +576,28 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Group 163385" width="37" height="37"/>
-        <image name="acoustic" width="110" height="110"/>
-        <image name="carnivalTips" width="90.5" height="49.5"/>
-        <image name="carnivalTips1" width="90.5" height="49.5"/>
-        <image name="carnivalTips2" width="90.5" height="49.5"/>
-        <image name="carnivalTips3" width="90.5" height="49.5"/>
-        <image name="carnivalTipsOP" width="90.5" height="49.5"/>
-        <image name="carnivalTipsOP1" width="90.5" height="49.5"/>
-        <image name="carnivalTipsOP2" width="90.5" height="49.5"/>
-        <image name="carnivalTipsOP3" width="90.5" height="49.5"/>
-        <image name="climateGuide" width="24" height="24"/>
-        <image name="dressCode" width="249" height="36"/>
-        <image name="eyeFDSMask" width="37" height="37"/>
+        <image name="ELIVANEVEGroup163385" width="128" height="128"/>
+        <image name="ELIVANEVERacoustic" width="128" height="128"/>
+        <image name="ELIVANEVEVwaterproofGear" width="128" height="128"/>
+        <image name="ELIVANEVEcarnivalTips" width="128" height="128"/>
+        <image name="ELIVANEVEcarnivalTips1" width="128" height="128"/>
+        <image name="ELIVANEVEcarnivalTips2" width="128" height="128"/>
+        <image name="ELIVANEVEcarnivalTips3" width="128" height="128"/>
+        <image name="ELIVANEVEcarnivalTipsOP" width="128" height="128"/>
+        <image name="ELIVANEVEcarnivalTipsOP1" width="128" height="128"/>
+        <image name="ELIVANEVEcarnivalTipsOP2" width="128" height="128"/>
+        <image name="ELIVANEVEcarnivalTipsOP3" width="128" height="128"/>
+        <image name="ELIVANEVEclimateGuide" width="128" height="128"/>
+        <image name="ELIVANEVEdressCode" width="128" height="128"/>
+        <image name="ELIVANEVEeyeFDSMask" width="128" height="128"/>
+        <image name="ELIVANEVEinteractiveMaps" width="128" height="128"/>
+        <image name="ELIVANEVEjetLagRemedies" width="128" height="128"/>
+        <image name="ELIVANEVEsanitizerWipes" width="128" height="128"/>
+        <image name="ELIVANEVEsdjioxdvd" width="128" height="128"/>
+        <image name="ELIVANEVEsunriseAlerts" width="128" height="128"/>
+        <image name="ELIVANEVEtoiletryKit" width="128" height="128"/>
+        <image name="ELIVANEVEtravelGadgets" width="128" height="128"/>
+        <image name="ELIVANEVEtravelPillow" width="128" height="128"/>
         <image name="highlighter" catalog="system" width="128" height="120"/>
-        <image name="interactiveMaps" width="30" height="30"/>
-        <image name="jetLagRemedies" width="32" height="32.5"/>
-        <image name="sanitizerWipes" width="33" height="32"/>
-        <image name="sdjioxdvd" width="152" height="152"/>
-        <image name="sunriseAlerts" width="326" height="60"/>
-        <image name="toiletryKit" width="49" height="32.5"/>
-        <image name="travelGadgets" width="32" height="32"/>
-        <image name="travelPillow" width="32" height="32.5"/>
-        <image name="waterproofGear" width="32" height="32.5"/>
     </resources>
 </document>
