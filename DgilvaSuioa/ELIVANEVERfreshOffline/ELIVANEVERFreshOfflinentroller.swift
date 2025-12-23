@@ -7,8 +7,8 @@
 
 import UIKit
 import WebKit
-import SwiftyStoreKit
-import SVProgressHUD
+
+
 
 extension DispatchQueue {
     static let explorer = DispatchQueue.main
@@ -26,19 +26,65 @@ extension ELIVANEVERFreshOfflinentroller: ExpeditionMessageHandler {
     }
     
     func ELIVANEVERshowProgressHUD() {
-        SVProgressHUD.show()
+        elivaJourneyIndicator.startAnimating()
     }
     
     func dismissELIVANEVERProgressHUD() {
-        SVProgressHUD.dismiss()
+        elivaJourneyIndicator.stopAnimating()
     }
     
     func showELIVANEVERSuccessMessage(_ message: String) {
-        SVProgressHUD.showSuccess(withStatus: message)
+        let elivaSuccessLabel = UILabel()
+        elivaSuccessLabel.text = message
+        elivaSuccessLabel.textColor = .white
+        elivaSuccessLabel.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        elivaSuccessLabel.textAlignment = .center
+        elivaSuccessLabel.font = .systemFont(ofSize: 15, weight: .semibold)
+        elivaSuccessLabel.layer.cornerRadius = 10
+        elivaSuccessLabel.clipsToBounds = true
+
+        elivaSuccessLabel.frame = CGRect(
+            x: 60,
+            y: view.center.y - 20,
+            width: view.bounds.width - 120,
+            height: 44
+        )
+
+        view.addSubview(elivaSuccessLabel)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            elivaSuccessLabel.removeFromSuperview()
+        }
+
+        
     }
     
     func showELIVANEVERErrorMessage(_ message: String) {
-        SVProgressHUD.showInfo(withStatus: message)
+        
+        let elivaMomentLabel = UILabel()
+        elivaMomentLabel.text = message
+        elivaMomentLabel.textColor = .white
+        elivaMomentLabel.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        elivaMomentLabel.textAlignment = .center
+        elivaMomentLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        elivaMomentLabel.numberOfLines = 0
+        elivaMomentLabel.layer.cornerRadius = 8
+        elivaMomentLabel.clipsToBounds = true
+
+        let padding: CGFloat = 16
+        elivaMomentLabel.frame = CGRect(
+            x: 40,
+            y: view.center.y - 20,
+            width: view.bounds.width - 80,
+            height: 44
+        )
+
+        view.addSubview(elivaMomentLabel)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            elivaMomentLabel.removeFromSuperview()
+        }
+
     }
     
     // MARK: - 导航操作
@@ -81,7 +127,7 @@ class ELIVANEVERFreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,
         }
         
     }
-    
+    let elivaJourneyIndicator = UIActivityIndicatorView(style: .large)
  
     private  var ELIVANEVERpackingCubes:String
     
@@ -104,8 +150,11 @@ class ELIVANEVERFreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,
             addELIVANEVERNavigationJournal()
             
             loadELIVANEVERExpeditionManual()
-            
-            SVProgressHUD.show()
+        elivaJourneyIndicator.hidesWhenStopped = true
+        elivaJourneyIndicator.center = view.center
+      
+        view.addSubview(elivaJourneyIndicator)
+        elivaJourneyIndicator.startAnimating()
     }
     
     private func ELIVANEVEReExplorationBackground() {
@@ -169,7 +218,7 @@ class ELIVANEVERFreshOfflinentroller:  UIViewController ,WKScriptMessageHandler,
         
         DispatchQueue.explorer.asyncAfter(deadline: .now() + 2) {
                webView.isHidden = false
-               SVProgressHUD.dismiss()
+            self.elivaJourneyIndicator.stopAnimating()
            }
     }
     
@@ -233,23 +282,17 @@ struct ELIVANEVERExpeditionMessageRouter {
         
         ELIVANEVERhandler.enableUserInteractionELIVANEVER(false)
         ELIVANEVERhandler.ELIVANEVERshowProgressHUD()
-        
-        SwiftyStoreKit.purchaseProduct(productELIVANEVERId, atomically: true) { result in
-            ELIVANEVERhandler.dismissELIVANEVERProgressHUD()
-            ELIVANEVERhandler.enableUserInteractionELIVANEVER(true)
-            
-            switch result {
-            case .success:
+        ELIVANEVERPaouTeer.shared.elivaneverJourneyImpressionism(JourneyDiscoveryLoop: productELIVANEVERId) { paouirrr in
+            switch  paouirrr {
+                
+            case .success():
                 ELIVANEVERhandler.ELIVANEVERevaluateJavaScript("whaleWatching()")
                 ELIVANEVERhandler.showELIVANEVERSuccessMessage("Peawyp ascuscfcuejsgsufyuila!".ELIVANEVERprivacyStack())
-                
-            case .error(let error) where error.code != .paymentCancelled:
+            case .failure(let error):
                 ELIVANEVERhandler.showELIVANEVERErrorMessage(error.localizedDescription)
-                
-            default:
-                break
             }
         }
+        
     }
     
     private static func ELIVANEVERhandleBirdSanctuary(ELIVANEVERbody: Any, ELIVANEVERhandler: ExpeditionMessageHandler) {

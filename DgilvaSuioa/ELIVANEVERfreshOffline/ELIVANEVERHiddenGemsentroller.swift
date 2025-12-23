@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class ELIVANEVERHiddenGemsentroller: UIViewController, ELIVANEVERFreeshoffCellPageDelegate {
     func ELIVANEVERexplorePage(ELIVANEVERdex: Int) {
@@ -17,7 +17,7 @@ class ELIVANEVERHiddenGemsentroller: UIViewController, ELIVANEVERFreeshoffCellPa
         self.view.backgroundColor = UIColor(red: 0.09411764706, green: 0.1019607843, blue: 0.1254901961, alpha: 1)
     }
     private var ELIVANEVERartGalleries = Array<Dictionary<String, Any>>()
-    
+    let elivaJourneyIndicator = UIActivityIndicatorView(style: .large)
     
     private  lazy var ELIVANEVERjetLagRemedies: UITableView = {
         let ELIVANEVERpackingCubes = UITableView.init(frame: UIScreen.main.bounds, style: .plain)
@@ -34,11 +34,15 @@ class ELIVANEVERHiddenGemsentroller: UIViewController, ELIVANEVERFreeshoffCellPa
     }()
     private func ELIVANEVEReExpeditionBasecamp() {
         self.view.addSubview(self.ELIVANEVERjetLagRemedies)
-        SVProgressHUD.show()
+        elivaJourneyIndicator.startAnimating()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         ELIVANEVERsetupView()
+        elivaJourneyIndicator.hidesWhenStopped = true
+        elivaJourneyIndicator.center = view.center
+      
+        view.addSubview(elivaJourneyIndicator)
         var ELIVANEVERingBaseCamp:Dictionary<String,Any> = ["localCuisine":"21747543"]
         ELIVANEVERingBaseCamp["natureTrails"] = 1
         
@@ -53,11 +57,11 @@ class ELIVANEVERHiddenGemsentroller: UIViewController, ELIVANEVERFreeshoffCellPa
     }
     private func ELIVANEVERCulturalDiscovery(ELIVANEVERngBaseCamp:Dictionary<String,Any>) {
         ELIVANEVERFreeshoffCell.baggageELIVANEVERAllowance(visaELIVANEVERAssistance: "/zuzshoez/iyeco", travelELIVANEVERInsurance: ELIVANEVERngBaseCamp) { heritag in
-            SVProgressHUD.dismiss()
+            self.elivaJourneyIndicator.stopAnimating()
             
             self.ELIVANEVERArchaeologicalFindings(heritag ??  [])
         } localELIVANEVERLaws: { unesco in
-            SVProgressHUD.dismiss()
+            self.elivaJourneyIndicator.stopAnimating()
         }
     }
 

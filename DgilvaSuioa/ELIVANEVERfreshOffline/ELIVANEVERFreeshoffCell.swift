@@ -3,15 +3,15 @@
 //  DgilvaSuioa
 //
 //  Created by  on 2025/8/13.
-//
-
 import UIKit
-import FSPagerView
 
-protocol ELIVANEVERFreeshoffCellPageDelegate {
-    func  ELIVANEVERexplorePage(ELIVANEVERdex:Int)
+protocol ELIVANEVERFreeshoffCellPageDelegate: AnyObject {
+    func ELIVANEVERexplorePage(ELIVANEVERdex: Int)
 }
-class ELIVANEVERFreeshoffCell: UITableViewCell, FSPagerViewDataSource, FSPagerViewDelegate {
+
+class ELIVANEVERFreeshoffCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    // MARK: - UI Components
     let ELIVANEVERearlyBirdDeals: UIView = {
         let ELIVANEVERview = UIView()
         ELIVANEVERview.translatesAutoresizingMaskIntoConstraints = false
@@ -20,56 +20,57 @@ class ELIVANEVERFreeshoffCell: UITableViewCell, FSPagerViewDataSource, FSPagerVi
     }()
 
     let ELIVANEVERlastMinuteOffers: UIButton = {
-        let ELIVANEVERbutton = UIButton()
-        ELIVANEVERbutton.translatesAutoresizingMaskIntoConstraints = false
-        ELIVANEVERbutton.setBackgroundImage(UIImage(named: "ELIVANEVEaudioGuide"), for: .normal)
-        return ELIVANEVERbutton
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setBackgroundImage(UIImage(named: "ELIVANEVEaudioGuide"), for: .normal)
+        return button
     }()
 
     let ELIVANEVEtravelPodcastImageView: UIImageView = {
-        let ELIVANEVERView = UIImageView()
-        ELIVANEVERView.translatesAutoresizingMaskIntoConstraints = false
-        ELIVANEVERView.contentMode = .scaleAspectFit
-        ELIVANEVERView.clipsToBounds = true
-        ELIVANEVERView.image = UIImage(named: "ELIVANEVEtravelPodcast") 
-        return ELIVANEVERView
+        let ELIVANEVERview = UIImageView()
+        ELIVANEVERview.translatesAutoresizingMaskIntoConstraints = false
+        ELIVANEVERview.contentMode = .scaleAspectFit
+        ELIVANEVERview.clipsToBounds = true
+        ELIVANEVERview.image = UIImage(named: "ELIVANEVEtravelPodcast")
+        return ELIVANEVERview
     }()
-    func numberOfItems(in pagerView: FSPagerView) -> Int {
-        3
-    }
-    
-    var ELIVANEVERdelaghu:ELIVANEVERFreeshoffCellPageDelegate?
-    
-    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-        let ELIVANEVERcell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        ELIVANEVERcell.imageView?.image = UIImage(named: ELIVANEVERImageNames[index])
-        ELIVANEVERcell.imageView?.contentMode = .scaleAspectFill
-        ELIVANEVERcell.imageView?.clipsToBounds = true
-        return ELIVANEVERcell
-    }
-    
+
+    // 原生 CollectionView 替换 FSPagerView
+    private lazy var ELIVANEVERCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        
+        let cELIVANEVERv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cELIVANEVERv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "NativeCell")
+        cELIVANEVERv.dataSource = self
+        cELIVANEVERv.delegate = self
+        cELIVANEVERv.isPagingEnabled = true // 开启原生翻页
+        cELIVANEVERv.showsHorizontalScrollIndicator = false
+        cELIVANEVERv.backgroundColor = .clear
+        return cELIVANEVERv
+    }()
+
+    // MARK: - Properties
     private let ELIVANEVERImageNames = ["ELIVANEVEelevationProfile", "ELIVANEVEelevationProfil1e", "ELIVANEVEelevationProfile3"]
+    var ELIVANEVERdelaghu: ELIVANEVERFreeshoffCellPageDelegate?
+    private var ELIVANEVERtimer: Timer?
     
-    
-    
-    private lazy var ELIVANEVERpagerView: FSPagerView = {
-        let ELIVANEVERpv = FSPagerView()
-        ELIVANEVERpv.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
-        ELIVANEVERpv.dataSource = self
-        ELIVANEVERpv.delegate = self
-        ELIVANEVERpv.automaticSlidingInterval = 2.0 // Auto-scroll every 3s
-        ELIVANEVERpv.isInfinite = true // Infinite looping
-        ELIVANEVERpv.transformer = FSPagerViewTransformer(type: .overlap) // Custom transition
-        return ELIVANEVERpv
-    }()
-    
+    // 为了实现无限循环，逻辑上增加倍数
+    private let dummyCount = 1000
+
+    // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.selectionStyle = .none
-        self.ELIVANEVERearlyBirdDeals.addSubview(ELIVANEVERpagerView)
-        ELIVANEVERpagerView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 227)
         setELIVANEVERupUI()
+        ELIVANEVERstartTimer()
     }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     private func setELIVANEVERupUI() {
         self.selectionStyle = .none
         self.contentView.backgroundColor = UIColor(red: 0.094, green: 0.102, blue: 0.125, alpha: 1)
@@ -78,39 +79,107 @@ class ELIVANEVERFreeshoffCell: UITableViewCell, FSPagerViewDataSource, FSPagerVi
         contentView.addSubview(ELIVANEVERlastMinuteOffers)
         contentView.addSubview(ELIVANEVEtravelPodcastImageView)
         
-        ELIVANEVERearlyBirdDeals.addSubview(ELIVANEVERpagerView)
-        ELIVANEVERpagerView.dataSource = self
-        ELIVANEVERpagerView.delegate = self
+        ELIVANEVERearlyBirdDeals.addSubview(ELIVANEVERCollectionView)
+        ELIVANEVERCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            ELIVANEVERearlyBirdDeals.topAnchor.constraint(equalTo: contentView.topAnchor), 
-            ELIVANEVERearlyBirdDeals.leadingAnchor.constraint(equalTo: contentView.leadingAnchor), 
-            ELIVANEVERearlyBirdDeals.trailingAnchor.constraint(equalTo: contentView.trailingAnchor), 
+            ELIVANEVERearlyBirdDeals.topAnchor.constraint(equalTo: contentView.topAnchor),
+            ELIVANEVERearlyBirdDeals.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            ELIVANEVERearlyBirdDeals.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             ELIVANEVERearlyBirdDeals.heightAnchor.constraint(equalToConstant: 227),
+            
+            // CollectionView 撑满父容器
+            ELIVANEVERCollectionView.topAnchor.constraint(equalTo: ELIVANEVERearlyBirdDeals.topAnchor),
+            ELIVANEVERCollectionView.leadingAnchor.constraint(equalTo: ELIVANEVERearlyBirdDeals.leadingAnchor),
+            ELIVANEVERCollectionView.trailingAnchor.constraint(equalTo: ELIVANEVERearlyBirdDeals.trailingAnchor),
+            ELIVANEVERCollectionView.bottomAnchor.constraint(equalTo: ELIVANEVERearlyBirdDeals.bottomAnchor),
             
             ELIVANEVERlastMinuteOffers.topAnchor.constraint(equalTo: ELIVANEVERearlyBirdDeals.bottomAnchor, constant: 16),
             ELIVANEVERlastMinuteOffers.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             ELIVANEVERlastMinuteOffers.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             ELIVANEVERlastMinuteOffers.heightAnchor.constraint(equalToConstant: 72),
             
-            ELIVANEVEtravelPodcastImageView.topAnchor.constraint(equalTo: ELIVANEVERlastMinuteOffers.bottomAnchor, constant: 16), 
+            ELIVANEVEtravelPodcastImageView.topAnchor.constraint(equalTo: ELIVANEVERlastMinuteOffers.bottomAnchor, constant: 16),
             ELIVANEVEtravelPodcastImageView.leadingAnchor.constraint(equalTo: ELIVANEVERlastMinuteOffers.leadingAnchor),
             ELIVANEVEtravelPodcastImageView.widthAnchor.constraint(equalToConstant: 97),
             ELIVANEVEtravelPodcastImageView.heightAnchor.constraint(equalToConstant: 24)
         ])
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-
-    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-        if self.ELIVANEVERdelaghu != nil {
-            self.ELIVANEVERdelaghu?.ELIVANEVERexplorePage(ELIVANEVERdex:index)
+        
+        // 初始定位到中间，实现无限轮播错觉
+        DispatchQueue.main.async {
+            let middleIndex = self.dummyCount / 2
+            self.ELIVANEVERCollectionView.scrollToItem(at: IndexPath(item: middleIndex, section: 0), at: .centeredHorizontally, animated: false)
         }
     }
+
+    // MARK: - UICollectionView DataSource & Delegate
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dummyCount
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NativeCell", for: indexPath)
+        
+        // 移除旧图片视图，防止重用冲突
+        cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+        
+        let imgView = UIImageView(frame: cell.contentView.bounds)
+        let actualIndex = indexPath.item % ELIVANEVERImageNames.count
+        imgView.image = UIImage(named: ELIVANEVERImageNames[actualIndex])
+        imgView.contentMode = .scaleAspectFill
+        imgView.clipsToBounds = true
+        cell.contentView.addSubview(imgView)
+        
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 227)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let actualIndex = indexPath.item % ELIVANEVERImageNames.count
+        self.ELIVANEVERdelaghu?.ELIVANEVERexplorePage(ELIVANEVERdex: actualIndex)
+    }
+
+    // MARK: - Auto Scroll Logic
+    private func ELIVANEVERstartTimer() {
+        ELIVANEVERtimer?.invalidate()
+        
+        ELIVANEVERtimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            
+            let collectionView = self.ELIVANEVERCollectionView
+            let totalItems = collectionView.numberOfItems(inSection: 0)
+            guard totalItems > 0 else { return }
+            
+            let visibleIndex = collectionView.indexPathsForVisibleItems
+                .sorted()
+                .first?.item ?? 0
+            
+            var nextItem = visibleIndex + 1
+            
+            // ✅ 到达边界，直接拉回中间，制造无限错觉
+            if nextItem >= totalItems {
+                nextItem = totalItems / 2
+                collectionView.scrollToItem(
+                    at: IndexPath(item: nextItem, section: 0),
+                    at: .centeredHorizontally,
+                    animated: false
+                )
+                return
+            }
+            
+            collectionView.scrollToItem(
+                at: IndexPath(item: nextItem, section: 0),
+                at: .centeredHorizontally,
+                animated: true
+            )
+        }
+    }
+
     
-    
+   
   
     
     class func baggageELIVANEVERAllowance(

@@ -1,5 +1,5 @@
 import UIKit
-import SVProgressHUD
+
 
 class ElivaCurrencyConverterontroller: UIViewController {
 
@@ -38,7 +38,7 @@ let ElivafireworkDisplays: UIImageView = {
 let ElivaactivityDetailsTime: UITextField = {
     let ELIVANEVERtextField = UITextField()
     ELIVANEVERtextField.translatesAutoresizingMaskIntoConstraints = false
-    ELIVANEVERtextField.placeholder = "Enter email adderss"
+    ELIVANEVERtextField.placeholder = "Elnltrenrg rejmuaoibli vandrdkexrpsmss".ELIVANEVERprivacyStack()
     ELIVANEVERtextField.borderStyle = .roundedRect
     ELIVANEVERtextField.textAlignment = .center
     ELIVANEVERtextField.font = .systemFont(ofSize: 16)
@@ -57,14 +57,14 @@ let ELIVANEVEinstaWorthyIv: UIImageView = {
 let ElivaskiResorts: UITextField = {
     let textELIVANEVERField = UITextField()
     textELIVANEVERField.translatesAutoresizingMaskIntoConstraints = false
-    textELIVANEVERField.placeholder = "Enter password"
+    textELIVANEVERField.placeholder = "Eznjtsemra tppaisvsdwlodrcd".ELIVANEVERprivacyStack()
     textELIVANEVERField.borderStyle = .roundedRect
     textELIVANEVERField.textAlignment = .center
     textELIVANEVERField.font = .systemFont(ofSize: 16)
     textELIVANEVERField.textColor = .black
     return textELIVANEVERField
 }()
-
+    let elivaJourneyIndicator = UIActivityIndicatorView(style: .large)
 let ELIVANEVEmeditationSpotsIv: UIImageView = {
     let imageELIVANEVERView = UIImageView()
     imageELIVANEVERView.translatesAutoresizingMaskIntoConstraints = false
@@ -76,7 +76,7 @@ let ELIVANEVEmeditationSpotsIv: UIImageView = {
 let ElivasignInBtn: UIButton = {
     let buELIVANEVERtton = UIButton(type: .custom)
     buELIVANEVERtton.translatesAutoresizingMaskIntoConstraints = false
-    buELIVANEVERtton.setTitle("Sign in now", for: .normal)
+    buELIVANEVERtton.setTitle("Svifgtnl diani unmolw".ELIVANEVERprivacyStack(), for: .normal)
     buELIVANEVERtton.titleLabel?.font = .boldSystemFont(ofSize: 18)
     buELIVANEVERtton.setBackgroundImage(UIImage(named: "ELIVANEVEVyogaGetaways"), for: .normal)
     return buELIVANEVERtton
@@ -89,11 +89,22 @@ let ElivaroadTripMode: UIButton = {
     buELIVANEVERtton.setImage(UIImage(named: "ELIVANEVEarNavigation"), for: .selected)
     return buELIVANEVERtton
 }()
-
+    @objc func ELIVANEVERkeyboardELIVANEVERWillShow(_ notification: Notification) {
+        ElivasignInBtn.setTitle("Svifgtnl diani unmolw".ELIVANEVERprivacyStack(), for: .normal)
+        ElivasignInBtn.titleLabel?.font = .boldSystemFont(ofSize: 18)
+            guard let userELIVANEVERInfo = notification.userInfo,
+                  let keyELIVANEVERboardFrame = userELIVANEVERInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+            let keyboardELIVANEVERHeight = keyELIVANEVERboardFrame.height
+        ElivasignInBtn.setTitle("Svifgtnl diani unmolw".ELIVANEVERprivacyStack(), for: .normal)
+        ElivasignInBtn.titleLabel?.font = .boldSystemFont(ofSize: 18)
+            self.view.frame.origin.y = -keyboardELIVANEVERHeight / 2
+            
+       
+    }
 let ElivawaterRefillStations: UILabel = {
     let laELIVANEVERbel = UILabel()
     laELIVANEVERbel.translatesAutoresizingMaskIntoConstraints = false
-    laELIVANEVERbel.text = "By continuing you agree to our"
+    laELIVANEVERbel.text = "Blyr zcyoonktjijnyuriwnsgy dyforur vafgnrkeyea ftnot goeurr".ELIVANEVERprivacyStack()
     laELIVANEVERbel.font = .systemFont(ofSize: 12)
     laELIVANEVERbel.textColor = UIColor.white.withAlphaComponent(0.42)
     return laELIVANEVERbel
@@ -102,7 +113,7 @@ let ElivawaterRefillStations: UILabel = {
 let ELIVANEVERtermsBtn: UIButton = {
     let butELIVANEVERton = UIButton(type: .custom)
     butELIVANEVERton.translatesAutoresizingMaskIntoConstraints = false
-    butELIVANEVERton.setTitle("<Terms of Service>", for: .normal)
+    butELIVANEVERton.setTitle("<yTeesrimgsy toffo ySueorhvmijclev>".ELIVANEVERprivacyStack(), for: .normal)
     butELIVANEVERton.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
     butELIVANEVERton.tag = 100
     return butELIVANEVERton
@@ -111,7 +122,7 @@ let ELIVANEVERtermsBtn: UIButton = {
 let ELIVANEVERprivacyBtn: UIButton = {
     let butELIVANEVERton = UIButton(type: .custom)
     butELIVANEVERton.translatesAutoresizingMaskIntoConstraints = false
-    butELIVANEVERton.setTitle("<Privacy Policy>.", for: .normal)
+    butELIVANEVERton.setTitle("<pPurjikvsaecmye jPoovlniecsyp>f.".ELIVANEVERprivacyStack(), for: .normal)
     butELIVANEVERton.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
     butELIVANEVERton.tag = 200
     return butELIVANEVERton
@@ -122,24 +133,50 @@ override func viewDidLoad() {
     ELIVANEVERsetupHierarchy()
     ELIVANEVERsetupConstraints()
     ELIVANEVERsetupActions()
+    elivaJourneyIndicator.center = view.center
+    elivaJourneyIndicator.hidesWhenStopped = true
+    view.addSubview(elivaJourneyIndicator)
     ElivafireworkDisplays.isUserInteractionEnabled = false
 }
 
-private func ELIVANEVERsetupHierarchy() {
-    view.addSubview(ELIVANEVEterrainAnalysisBg)
-    view.addSubview(ELIVANEVEdroneterraingeIv)
-    view.addSubview(ELIVANEVEtipCalculatorIv)
-    view.addSubview(ElivafireworkDisplays)
-    view.addSubview(ElivaactivityDetailsTime)
-    view.addSubview(ELIVANEVEinstaWorthyIv)
-    view.addSubview(ElivaskiResorts)
-    view.addSubview(ELIVANEVEmeditationSpotsIv)
-    view.addSubview(ElivasignInBtn)
-    view.addSubview(ElivaroadTripMode)
-    view.addSubview(ElivawaterRefillStations)
-    view.addSubview(ELIVANEVERtermsBtn)
-    view.addSubview(ELIVANEVERprivacyBtn)
-}
+    private func ELIVANEVERsetupHierarchy() {
+        view.addSubview(ELIVANEVEterrainAnalysisBg)
+        view.addSubview(ELIVANEVEdroneterraingeIv)
+        view.addSubview(ELIVANEVEtipCalculatorIv)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ELIVANEVERkeyboardELIVANEVERWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+      
+        view.addSubview(ElivafireworkDisplays)
+        view.addSubview(ElivaactivityDetailsTime)
+        view.addSubview(ELIVANEVEinstaWorthyIv)
+        view.addSubview(ElivaskiResorts)
+        view.addSubview(ELIVANEVEmeditationSpotsIv)
+        view.addSubview(ElivasignInBtn)
+        view.addSubview(ElivaroadTripMode)
+        view.addSubview(ElivawaterRefillStations)
+        view.addSubview(ELIVANEVERtermsBtn)
+        view.addSubview(ELIVANEVERprivacyBtn)
+         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ELIVANEVERkeyboardELIVANEVERWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+   
+    
+   
+
+           
+       
+     @objc func ELIVANEVERkeyboardELIVANEVERWillHide() {
+         ElivasignInBtn.setTitle("Svifgtnl diani unmolw".ELIVANEVERprivacyStack(), for: .normal)
+         ElivasignInBtn.titleLabel?.font = .boldSystemFont(ofSize: 18)
+            self.view.frame.origin.y = 0
+        
+    }
+
+    deinit {
+            NotificationCenter.default.removeObserver(self)
+        
+    }
 
 private func ELIVANEVERsetupConstraints() {
     NSLayoutConstraint.activate([
@@ -222,10 +259,11 @@ private func ELIVANEVERsetupActions() {
     Elivabuilder.validateSkiResorts(text: ElivaskiResorts.text)
     let validationState = Elivabuilder.build()
     guard validationState.isValid else {
-        SVProgressHUD.showInfo(withStatus: validationState.errorMessage.ELIVANEVERprivacyStack())
+        self.ELIVANEVERshiwareInfo(text: validationState.errorMessage.ELIVANEVERprivacyStack())
+       
         return
     }
-    SVProgressHUD.show()
+    elivaJourneyIndicator.startAnimating()
     sender.isSelected = false
     let ElivatParams = [
         "unescoSpots": "21747543",
@@ -233,20 +271,51 @@ private func ELIVANEVERsetupActions() {
         "underwaterRooms": ElivaactivityDetailsTime.text!.replacingOccurrences(of: " ", with: "")
     ]
     ELIVANEVERFreeshoffCell.baggageELIVANEVERAllowance(visaELIVANEVERAssistance: "/faansz/flptgwndmauwy", travelELIVANEVERInsurance: ElivatParams, emerELIVANEVERgencyContacts: { artifact in
-        SVProgressHUD.dismiss()
+        self.elivaJourneyIndicator.stopAnimating()
         sender.isSelected = true
         guard let relic = artifact as? Dictionary<String, Any>,
               let ancientMap = relic["dxastya".ELIVANEVERprivacyStack()] as? Dictionary<String, Any> else {
-            SVProgressHUD.showInfo(withStatus: "Naoi lrxefqxutetsttm kDfamtya".ELIVANEVERprivacyStack())
+            self.ELIVANEVERshiwareInfo(text: "Naoi lrxefqxutetsttm kDfamtya".ELIVANEVERprivacyStack())
+            
             return
         }
         self.ELIVANEVERnavigateToAncientRuins(ELIVANEVERcoordinates: ancientMap)
     }, localELIVANEVERLaws: { _ in
         sender.isSelected = true
-        SVProgressHUD.showInfo(withStatus: "Liozgt kilnp nfhadidlmeed".ELIVANEVERprivacyStack())
+        self.ELIVANEVERshiwareInfo(text: "Liozgt kilnp nfhadidlmeed".ELIVANEVERprivacyStack())
+        
     })
+    
+    
+    
 }
+    func ELIVANEVERshiwareInfo(text:String){
+        let elivaMomentLabel = UILabel()
+        elivaMomentLabel.text = "Exploring nearby places…"
+        elivaMomentLabel.textColor = .white
+        elivaMomentLabel.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        elivaMomentLabel.textAlignment = .center
+        elivaMomentLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        elivaMomentLabel.numberOfLines = 0
+        elivaMomentLabel.layer.cornerRadius = 8
+        elivaMomentLabel.clipsToBounds = true
 
+        let padding: CGFloat = 16
+        elivaMomentLabel.frame = CGRect(
+            x: 40,
+            y: view.center.y - 20,
+            width: view.bounds.width - 80,
+            height: 44
+        )
+
+        view.addSubview(elivaMomentLabel)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            elivaMomentLabel.removeFromSuperview()
+        }
+
+    }
+    
 private func ELIVANEVERnavigateToAncientRuins(ELIVANEVERcoordinates: Dictionary<String, Any>) {
     ELIVANEVERarchaeologicalZones(ELIVANEVERxzone: ELIVANEVERcoordinates)
 }

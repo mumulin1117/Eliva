@@ -6,11 +6,11 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class ELIVANEVERTrailTalktsentroller: UIViewController {
     private var ELIVANEVERReadtic:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
-    
+    let elivaJourneyIndicator = UIActivityIndicatorView(style: .large)
     private lazy var ELIVANEVERbookstoreCrawl: UICollectionView = {
             let lELIVANEVERayout = UICollectionViewFlowLayout()
             lELIVANEVERayout.scrollDirection = .horizontal
@@ -87,7 +87,7 @@ class ELIVANEVERTrailTalktsentroller: UIViewController {
     
     private func ELIVANEVERprepareBaseCamp() {
         ELIVANEVERreefRestoration()
-        SVProgressHUD.show()
+        elivaJourneyIndicator.startAnimating()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +95,13 @@ class ELIVANEVERTrailTalktsentroller: UIViewController {
                
         ELIVANEVERsetupConstraints()
         ELIVANEVERprepareBaseCamp()
+        
+        elivaJourneyIndicator.hidesWhenStopped = true
+        elivaJourneyIndicator.center = view.center
+      
+        view.addSubview(elivaJourneyIndicator)
+        
+        
         var ELIVANEVERpreparingBaseCamp1:Dictionary<String,Any> = ["localCuisine":"21747543"]
         
         ELIVANEVERpreparingBaseCamp1["natureTrails"] = 1
@@ -105,11 +112,11 @@ class ELIVANEVERTrailTalktsentroller: UIViewController {
        
        
         ELIVANEVERFreeshoffCell.baggageELIVANEVERAllowance(visaELIVANEVERAssistance: "/zuzshoez/iyeco", travelELIVANEVERInsurance: ELIVANEVERpreparingBaseCamp1) { heritag in
-            SVProgressHUD.dismiss()
+            self.elivaJourneyIndicator.stopAnimating()
             
             self.ELIVANEVERhandleDiscovery(ELIVANEVERresponse: heritag)
         } localELIVANEVERLaws: { unesco in
-            SVProgressHUD.dismiss()
+            self.elivaJourneyIndicator.stopAnimating()
         }
     }
     

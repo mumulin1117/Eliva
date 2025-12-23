@@ -73,7 +73,7 @@ class ELIVANEVERTravelDiarytroller: UIViewController {
             let ELIVANEVERbtn = UIButton(type: .custom)
             ELIVANEVERbtn.tag = 100
             ELIVANEVERbtn.titleLabel?.font = .boldSystemFont(ofSize: 16)
-            ELIVANEVERbtn.setTitle("   My Balance", for: .normal)
+            ELIVANEVERbtn.setTitle(" k i dMsyc xByavlqasnycde".ELIVANEVERprivacyStack(), for: .normal)
             ELIVANEVERbtn.setImage(UIImage(named: "ELIVANEVEsanitizerWipes"), for: .normal)
             ELIVANEVERbtn.setBackgroundImage(UIImage(named: "ELIVANEVEsunriseAlerts"), for: .normal)
             ELIVANEVERbtn.addTarget(self, action: #selector(ELIVANEVERglampingSites(_:)), for: .touchUpInside)
@@ -101,7 +101,7 @@ class ELIVANEVERTravelDiarytroller: UIViewController {
         
         private let postLabel: UILabel = {
             let laELIVANEVERbel = UILabel()
-            laELIVANEVERbel.text = "Post"
+            laELIVANEVERbel.text = "Puodslt".ELIVANEVERprivacyStack()
             laELIVANEVERbel.font = .boldSystemFont(ofSize: 19)
             laELIVANEVERbel.textColor = .white
             laELIVANEVERbel.translatesAutoresizingMaskIntoConstraints = false
@@ -118,7 +118,7 @@ class ELIVANEVERTravelDiarytroller: UIViewController {
         
         private let noDataLabel: UILabel = {
             let laELIVANEVERbel = UILabel()
-            laELIVANEVERbel.text = "No data available."
+            laELIVANEVERbel.text = "Ncos sdzabtnau oamvxapiclgagbmlkep.".ELIVANEVERprivacyStack()
             laELIVANEVERbel.font = .boldSystemFont(ofSize: 13)
             laELIVANEVERbel.textColor = .lightGray
             laELIVANEVERbel.textAlignment = .center

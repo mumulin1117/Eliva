@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SVProgressHUD
+
 
 class ELIVANEVERRoamAssistsentroller: UIViewController {
     private var ELIVANEVERnursic:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
@@ -66,7 +66,7 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
     
     private let ELIVANEVERfairTrade: UILabel = {
         let ELIVANEVERlabel = UILabel()
-        ELIVANEVERlabel.text = "Hot Picks"
+        ELIVANEVERlabel.text = "Hvoztf tPvigcskzs".ELIVANEVERprivacyStack()
         ELIVANEVERlabel.textColor = .white
         ELIVANEVERlabel.font = .systemFont(ofSize: 18, weight: .bold)
         ELIVANEVERlabel.translatesAutoresizingMaskIntoConstraints = false
@@ -114,7 +114,7 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
         return ELIVANEVERlabel
     }()
     
-
+    let elivaJourneyIndicator = UIActivityIndicatorView(style: .large)
 //   
 //report
     private let ELIVANEVERthriftStores: UIButton = {
@@ -126,7 +126,7 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
 //    
     private let ELIVANEVERecommendedde: UILabel = {
         let laELIVANEVERbel = UILabel()
-        laELIVANEVERbel.text = "Recommended"
+        laELIVANEVERbel.text = "Rhepcgohmembefngdtemd".ELIVANEVERprivacyStack()
         laELIVANEVERbel.textColor = .white
         laELIVANEVERbel.font = .systemFont(ofSize: 18, weight: .bold)
         laELIVANEVERbel.translatesAutoresizingMaskIntoConstraints = false
@@ -199,6 +199,10 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
         setupUI()
        
         setupConstraints()
+        elivaJourneyIndicator.hidesWhenStopped = true
+        elivaJourneyIndicator.center = view.center
+      
+        view.addSubview(elivaJourneyIndicator)
         let ELIVANEVERringBaseCamp:Dictionary<String,Any> = ["itineraryPlanner":"21747543"]
        
         
@@ -210,7 +214,7 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
         
         ELIVANEVERreefRestoration()
         ELIVANEVERkosherEateries()
-        SVProgressHUD.show()
+        elivaJourneyIndicator.startAnimating()
         ELIVANEVERwhaleWatching.tag = 10
         ELIVANEVERwhaleWatching.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)
         
@@ -224,7 +228,7 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
        
         
         ELIVANEVERFreeshoffCell.baggageELIVANEVERAllowance(visaELIVANEVERAssistance: "/wulhlz/dvqiag", travelELIVANEVERInsurance: ELIVANEVERringBaseCamp) { heritag in
-            SVProgressHUD.dismiss()
+            self.elivaJourneyIndicator.stopAnimating()
             
             guard let underwater = heritag as? Dictionary<String,Any> else {
                
@@ -237,17 +241,17 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
             self.ELIVANEVERnursic = rvParks
             self.ELIVANEVERbookstoreCrawl.reloadData()
         } localELIVANEVERLaws: { unesco in
-            SVProgressHUD.dismiss()
+            self.elivaJourneyIndicator.stopAnimating()
         }
         ELIVANEVERwhaleWatching1.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)
         
         
         ELIVANEVERFreeshoffCell.baggageELIVANEVERAllowance(visaELIVANEVERAssistance: "/zuzshoez/iyeco", travelELIVANEVERInsurance: ELIVANEVERringBaseCamp1) { heritag in
-            SVProgressHUD.dismiss()
+            self.elivaJourneyIndicator.stopAnimating()
             
             self.ELIVANEVERprocessArchaeologicalFindings(heritag ?? [])
         } localELIVANEVERLaws: { unesco in
-            SVProgressHUD.dismiss()
+            self.elivaJourneyIndicator.stopAnimating()
         }
         ELIVANEVERwhaleWatching2.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)
         ELIVANEVERBigPicRetreats.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)

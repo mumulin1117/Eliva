@@ -6,15 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		4F2AE27921FA18CB84ED5C48 /* Pods_DgilvaSuioa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EAF55FF801B9257D94B0AB /* Pods_DgilvaSuioa.framework */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		0470B4532E4C328B002560B1 /* DgilvaSuioa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DgilvaSuioa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3174B3642B6C9D5842B6F9E8 /* Pods-DgilvaSuioa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DgilvaSuioa.debug.xcconfig"; path = "Target Support Files/Pods-DgilvaSuioa/Pods-DgilvaSuioa.debug.xcconfig"; sourceTree = "<group>"; };
-		79205ED02FB8BA90A2C891C8 /* Pods-DgilvaSuioa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DgilvaSuioa.release.xcconfig"; path = "Target Support Files/Pods-DgilvaSuioa/Pods-DgilvaSuioa.release.xcconfig"; sourceTree = "<group>"; };
-		80EAF55FF801B9257D94B0AB /* Pods_DgilvaSuioa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DgilvaSuioa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F2AE27921FA18CB84ED5C48 /* Pods_DgilvaSuioa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +47,6 @@
 			children = (
 				0470B4552E4C328B002560B1 /* DgilvaSuioa */,
 				0470B4542E4C328B002560B1 /* Products */,
-				07DC73797B40049912EDD11C /* Pods */,
 				240EBD8A1BA0C7E370545201 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -68,19 +59,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		07DC73797B40049912EDD11C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3174B3642B6C9D5842B6F9E8 /* Pods-DgilvaSuioa.debug.xcconfig */,
-				79205ED02FB8BA90A2C891C8 /* Pods-DgilvaSuioa.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		240EBD8A1BA0C7E370545201 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				80EAF55FF801B9257D94B0AB /* Pods_DgilvaSuioa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -92,11 +73,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0470B4662E4C328D002560B1 /* Build configuration list for PBXNativeTarget "DgilvaSuioa" */;
 			buildPhases = (
-				626D0828BEFEC894723680F4 /* [CP] Check Pods Manifest.lock */,
 				0470B44F2E4C328B002560B1 /* Sources */,
 				0470B4502E4C328B002560B1 /* Frameworks */,
 				0470B4512E4C328B002560B1 /* Resources */,
-				0FFC244FE937C08789EFBBD8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,48 +133,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0FFC244FE937C08789EFBBD8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DgilvaSuioa/Pods-DgilvaSuioa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DgilvaSuioa/Pods-DgilvaSuioa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DgilvaSuioa/Pods-DgilvaSuioa-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		626D0828BEFEC894723680F4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DgilvaSuioa-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		0470B44F2E4C328B002560B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -209,7 +146,6 @@
 /* Begin XCBuildConfiguration section */
 		0470B4672E4C328D002560B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3174B3642B6C9D5842B6F9E8 /* Pods-DgilvaSuioa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -247,7 +183,6 @@
 		};
 		0470B4682E4C328D002560B1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79205ED02FB8BA90A2C891C8 /* Pods-DgilvaSuioa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
