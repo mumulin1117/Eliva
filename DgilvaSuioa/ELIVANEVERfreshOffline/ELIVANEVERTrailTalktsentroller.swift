@@ -11,12 +11,72 @@ import SVProgressHUD
 class ELIVANEVERTrailTalktsentroller: UIViewController {
     private var ELIVANEVERReadtic:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
     
-    @IBOutlet weak var ELIVANEVERbookstoreCrawl: UICollectionView!
+    private lazy var ELIVANEVERbookstoreCrawl: UICollectionView = {
+            let lELIVANEVERayout = UICollectionViewFlowLayout()
+            lELIVANEVERayout.scrollDirection = .horizontal
+            lELIVANEVERayout.minimumLineSpacing = 10
+            lELIVANEVERayout.minimumInteritemSpacing = 10
+            lELIVANEVERayout.itemSize = CGSize(width: 128, height: 128)
+            
+            let ELIVANEVERcv = UICollectionView(frame: .zero, collectionViewLayout: lELIVANEVERayout)
+            ELIVANEVERcv.backgroundColor = .clear
+            ELIVANEVERcv.translatesAutoresizingMaskIntoConstraints = false
+            // 如果有对应的 Cell 类，请在此注册
+            // cv.register(YourCellClass.self, forCellWithReuseIdentifier: "cell")
+            return ELIVANEVERcv
+        }()
     
-    
-    
-    
-    @IBAction func ELIVANEVERwildlifeConservation(_ sender: Any) {
+    // 对应左侧按钮 (ID: ppB-De-hG6)
+        private lazy var backELIVANEVERButton: UIButton = {
+            let ELIVANEVERbtn = UIButton(type: .custom)
+            ELIVANEVERbtn.setImage(UIImage(named: "ELIVANEVEtravelPillow"), for: .normal)
+            ELIVANEVERbtn.translatesAutoresizingMaskIntoConstraints = false
+            ELIVANEVERbtn.addTarget(self, action: #selector(ELIVANEVERextremeSports(_:)), for: .touchUpInside)
+            return ELIVANEVERbtn
+        }()
+
+        // 对应右侧按钮 (ID: F4I-Ko-Cvg)
+        private lazy var actionELIVANEVERButton: UIButton = {
+            let bELIVANEVERtn = UIButton(type: .custom)
+            bELIVANEVERtn.setImage(UIImage(named: "ELIVANEVEVwaterproofGear"), for: .normal)
+            bELIVANEVERtn.translatesAutoresizingMaskIntoConstraints = false
+            bELIVANEVERtn.addTarget(self, action: #selector(ELIVANEVERwildlifeConservation(_:)), for: .touchUpInside)
+            return bELIVANEVERtn
+        }()
+    private func ELIVANEVERsetupUI() {
+            // 背景颜色参考 red="0.0941" green="0.1019" blue="0.1254"
+            view.backgroundColor = UIColor(red: 0.094, green: 0.102, blue: 0.125, alpha: 1.0)
+            
+            view.addSubview(ELIVANEVERbookstoreCrawl)
+            view.addSubview(backELIVANEVERButton)
+            view.addSubview(actionELIVANEVERButton)
+        }
+
+        private func ELIVANEVERsetupConstraints() {
+            NSLayoutConstraint.activate([
+                // CollectionView 全屏布局
+                ELIVANEVERbookstoreCrawl.topAnchor.constraint(equalTo: view.topAnchor),
+                ELIVANEVERbookstoreCrawl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                ELIVANEVERbookstoreCrawl.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+                ELIVANEVERbookstoreCrawl.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
+                // 左侧按钮约束 (16, 21, 32x32)
+                backELIVANEVERButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1),
+                backELIVANEVERButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+                backELIVANEVERButton.widthAnchor.constraint(equalToConstant: 32),
+                backELIVANEVERButton.heightAnchor.constraint(equalToConstant: 32),
+
+                // 右侧按钮约束 (16, 32x32, 垂直居中于左侧按钮)
+                actionELIVANEVERButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+                actionELIVANEVERButton.centerYAnchor.constraint(equalTo: backELIVANEVERButton.centerYAnchor),
+                actionELIVANEVERButton.widthAnchor.constraint(equalToConstant: 32),
+                actionELIVANEVERButton.heightAnchor.constraint(equalToConstant: 32)
+            ])
+        }
+
+
+
+    @objc func ELIVANEVERwildlifeConservation(_ sender: Any) {
         let vcont =  ELIVANEVERFreshOfflinentroller.init(ELIVANEVERtravelGadgets: ELIVANEVERUniversalAdapter.ELIVANEVEReyeMask.ELIVANEVERboutiqueHotels(ELIVANEVERhomestays: ""))
         self.navigationController?.pushViewController(vcont, animated: true)
     }
@@ -31,6 +91,9 @@ class ELIVANEVERTrailTalktsentroller: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ELIVANEVERsetupUI()
+               
+        ELIVANEVERsetupConstraints()
         ELIVANEVERprepareBaseCamp()
         var ELIVANEVERpreparingBaseCamp1:Dictionary<String,Any> = ["localCuisine":"21747543"]
         
@@ -75,7 +138,7 @@ class ELIVANEVERTrailTalktsentroller: UIViewController {
         ELIVANEVERbookstoreCrawl.delegate = self
         ELIVANEVERbookstoreCrawl.dataSource  = self
         
-        ELIVANEVERbookstoreCrawl.register(UINib(nibName: "ELIVANEVERTrieolTalkoCell", bundle: nil), forCellWithReuseIdentifier: "ELIVANEVERTrieolTalkoCell")
+        ELIVANEVERbookstoreCrawl.register(ELIVANEVERTrieolTalkoCell.self, forCellWithReuseIdentifier: "ELIVANEVERTrieolTalkoCell")
         ELIVANEVERbookstoreCrawl.isPagingEnabled = true
         let ELIVANEVERflopsk = UICollectionViewFlowLayout.init()
         ELIVANEVERflopsk.itemSize = CGSize.init(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -116,8 +179,8 @@ extension ELIVANEVERTrailTalktsentroller:UICollectionViewDelegate,UICollectionVi
         ELIVANEVERcefldl.ELIVANEVERseasonalEvents.text = formatter.string(from: date)
       
         
-        if let path = (Venues["seniorTravel"] as? String) {
-            self.ELIVANEVERmetaphorical(path, ELIVANEVERfreshOffline: ELIVANEVERcefldl.ELIVANEVERearlyBirdDeals)
+        if let ELIVANEVERpath = (Venues["seniorTravel"] as? String) {
+            self.ELIVANEVERmetaphorical(ELIVANEVERpath, ELIVANEVERfreshOffline: ELIVANEVERcefldl.ELIVANEVERearlyBirdDeals)
         }
         
         ELIVANEVERcefldl.ELIVANEVERlastMinuteOffers.text = Venues["familyFriendly"] as? String

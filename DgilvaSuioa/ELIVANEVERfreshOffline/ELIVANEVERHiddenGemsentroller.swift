@@ -13,7 +13,9 @@ class ELIVANEVERHiddenGemsentroller: UIViewController, ELIVANEVERFreeshoffCellPa
         let ELIVANEVERvcont =  ELIVANEVERFreshOfflinentroller.init(ELIVANEVERtravelGadgets: ELIVANEVERUniversalAdapter.ELIVANEVERwaterproof.ELIVANEVERboutiqueHotels(ELIVANEVERhomestays: "\(ELIVANEVERdex)"))
         self.navigationController?.pushViewController(ELIVANEVERvcont, animated: true)
     }
-    
+    private func ELIVANEVERsetupView() {
+        self.view.backgroundColor = UIColor(red: 0.09411764706, green: 0.1019607843, blue: 0.1254901961, alpha: 1)
+    }
     private var ELIVANEVERartGalleries = Array<Dictionary<String, Any>>()
     
     
@@ -21,9 +23,9 @@ class ELIVANEVERHiddenGemsentroller: UIViewController, ELIVANEVERFreeshoffCellPa
         let ELIVANEVERpackingCubes = UITableView.init(frame: UIScreen.main.bounds, style: .plain)
         ELIVANEVERpackingCubes.delegate = self
         ELIVANEVERpackingCubes.showsVerticalScrollIndicator = false
-        ELIVANEVERpackingCubes.register(UINib(nibName: "ELIVANEVERFreeshoffCell", bundle: nil), forCellReuseIdentifier: "ELIVANEVERFreeshoffCell")
+        ELIVANEVERpackingCubes.register(ELIVANEVERFreeshoffCell.self, forCellReuseIdentifier: "ELIVANEVERFreeshoffCell")
         ELIVANEVERpackingCubes.dataSource = self
-        ELIVANEVERpackingCubes.register(UINib(nibName: "ELIVANEVERFreHandBookCell", bundle: nil), forCellReuseIdentifier: "ELIVANEVERFreHandBookCell")
+        ELIVANEVERpackingCubes.register(ELIVANEVERFreHandBookCell.self , forCellReuseIdentifier: "ELIVANEVERFreHandBookCell")
         ELIVANEVERpackingCubes.separatorStyle = .none
         ELIVANEVERpackingCubes.contentInsetAdjustmentBehavior = .never
         ELIVANEVERpackingCubes.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
@@ -36,6 +38,7 @@ class ELIVANEVERHiddenGemsentroller: UIViewController, ELIVANEVERFreeshoffCellPa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ELIVANEVERsetupView()
         var ELIVANEVERingBaseCamp:Dictionary<String,Any> = ["localCuisine":"21747543"]
         ELIVANEVERingBaseCamp["natureTrails"] = 1
         
@@ -59,8 +62,8 @@ class ELIVANEVERHiddenGemsentroller: UIViewController, ELIVANEVERFreeshoffCellPa
     }
 
     private func ELIVANEVERArchaeologicalFindings(_ artifact: Any) {
-        guard let ruins = artifact as? Dictionary<String, Any>,
-              let artifacts = ruins["dvaptua".ELIVANEVERprivacyStack()] as? [Dictionary<String, Any>] else {
+        guard let ELIVANEruins = artifact as? Dictionary<String, Any>,
+              let artifacts = ELIVANEruins["dvaptua".ELIVANEVERprivacyStack()] as? [Dictionary<String, Any>] else {
             return
         }
         

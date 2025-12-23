@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
         
-        let ELIVANEVERov = UIStoryboard(name: "Mcadipn".ELIVANEVERprivacyStack(), bundle: nil).instantiateViewController(withIdentifier: "maohugiazinrw")
+        let ELIVANEVERov = ELIVANEVERMainNavigationController()
         
         window?.rootViewController = ELIVANEVERtoiletryKit() ? ELIVANEVERov : ElivaCurrencyConverterontroller.init() 
         window?.makeKeyAndVisible()

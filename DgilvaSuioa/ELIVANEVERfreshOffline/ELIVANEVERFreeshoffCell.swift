@@ -12,6 +12,28 @@ protocol ELIVANEVERFreeshoffCellPageDelegate {
     func  ELIVANEVERexplorePage(ELIVANEVERdex:Int)
 }
 class ELIVANEVERFreeshoffCell: UITableViewCell, FSPagerViewDataSource, FSPagerViewDelegate {
+    let ELIVANEVERearlyBirdDeals: UIView = {
+        let ELIVANEVERview = UIView()
+        ELIVANEVERview.translatesAutoresizingMaskIntoConstraints = false
+        ELIVANEVERview.backgroundColor = UIColor(red: 0.094, green: 0.102, blue: 0.125, alpha: 1)
+        return ELIVANEVERview
+    }()
+
+    let ELIVANEVERlastMinuteOffers: UIButton = {
+        let ELIVANEVERbutton = UIButton()
+        ELIVANEVERbutton.translatesAutoresizingMaskIntoConstraints = false
+        ELIVANEVERbutton.setBackgroundImage(UIImage(named: "ELIVANEVEaudioGuide"), for: .normal)
+        return ELIVANEVERbutton
+    }()
+
+    let ELIVANEVEtravelPodcastImageView: UIImageView = {
+        let ELIVANEVERView = UIImageView()
+        ELIVANEVERView.translatesAutoresizingMaskIntoConstraints = false
+        ELIVANEVERView.contentMode = .scaleAspectFit
+        ELIVANEVERView.clipsToBounds = true
+        ELIVANEVERView.image = UIImage(named: "ELIVANEVEtravelPodcast") 
+        return ELIVANEVERView
+    }()
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         3
     }
@@ -30,7 +52,7 @@ class ELIVANEVERFreeshoffCell: UITableViewCell, FSPagerViewDataSource, FSPagerVi
     
     
     
-    private lazy var pagerView: FSPagerView = {
+    private lazy var ELIVANEVERpagerView: FSPagerView = {
         let ELIVANEVERpv = FSPagerView()
         ELIVANEVERpv.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
         ELIVANEVERpv.dataSource = self
@@ -41,18 +63,47 @@ class ELIVANEVERFreeshoffCell: UITableViewCell, FSPagerViewDataSource, FSPagerVi
         return ELIVANEVERpv
     }()
     
-    @IBOutlet weak var ELIVANEVERearlyBirdDeals: UIView!
-    
-    @IBOutlet weak var ELIVANEVERlastMinuteOffers: UIButton!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
-        self.ELIVANEVERearlyBirdDeals.addSubview(pagerView)
-        pagerView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 227)
+        self.ELIVANEVERearlyBirdDeals.addSubview(ELIVANEVERpagerView)
+        ELIVANEVERpagerView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 227)
+        setELIVANEVERupUI()
+    }
+    private func setELIVANEVERupUI() {
+        self.selectionStyle = .none
+        self.contentView.backgroundColor = UIColor(red: 0.094, green: 0.102, blue: 0.125, alpha: 1)
+        
+        contentView.addSubview(ELIVANEVERearlyBirdDeals)
+        contentView.addSubview(ELIVANEVERlastMinuteOffers)
+        contentView.addSubview(ELIVANEVEtravelPodcastImageView)
+        
+        ELIVANEVERearlyBirdDeals.addSubview(ELIVANEVERpagerView)
+        ELIVANEVERpagerView.dataSource = self
+        ELIVANEVERpagerView.delegate = self
+        
+        NSLayoutConstraint.activate([
+            ELIVANEVERearlyBirdDeals.topAnchor.constraint(equalTo: contentView.topAnchor), 
+            ELIVANEVERearlyBirdDeals.leadingAnchor.constraint(equalTo: contentView.leadingAnchor), 
+            ELIVANEVERearlyBirdDeals.trailingAnchor.constraint(equalTo: contentView.trailingAnchor), 
+            ELIVANEVERearlyBirdDeals.heightAnchor.constraint(equalToConstant: 227),
+            
+            ELIVANEVERlastMinuteOffers.topAnchor.constraint(equalTo: ELIVANEVERearlyBirdDeals.bottomAnchor, constant: 16),
+            ELIVANEVERlastMinuteOffers.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            ELIVANEVERlastMinuteOffers.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            ELIVANEVERlastMinuteOffers.heightAnchor.constraint(equalToConstant: 72),
+            
+            ELIVANEVEtravelPodcastImageView.topAnchor.constraint(equalTo: ELIVANEVERlastMinuteOffers.bottomAnchor, constant: 16), 
+            ELIVANEVEtravelPodcastImageView.leadingAnchor.constraint(equalTo: ELIVANEVERlastMinuteOffers.leadingAnchor),
+            ELIVANEVEtravelPodcastImageView.widthAnchor.constraint(equalToConstant: 97),
+            ELIVANEVEtravelPodcastImageView.heightAnchor.constraint(equalToConstant: 24)
+        ])
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
+
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         if self.ELIVANEVERdelaghu != nil {
             self.ELIVANEVERdelaghu?.ELIVANEVERexplorePage(ELIVANEVERdex:index)

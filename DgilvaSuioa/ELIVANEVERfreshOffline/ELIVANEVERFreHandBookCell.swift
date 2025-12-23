@@ -9,26 +9,97 @@ import UIKit
 
 class ELIVANEVERFreHandBookCell: UITableViewCell {
 
-    @IBOutlet weak var ELIVANEVERetiquetteTips: UIButton!
-    
-    @IBOutlet weak var ELIVANEVERseasonalEvents: UIImageView!
-    
-    @IBOutlet weak var ELIVANEVERlocalTraditions: UILabel!
-    
-    @IBOutlet weak var ELIVANEVERartGalleries: UIView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    let ELIVANEVERseasonalEvents: UIImageView = {
+        let ELIVANEVERView = UIImageView()
+        ELIVANEVERView.translatesAutoresizingMaskIntoConstraints = false
+        ELIVANEVERView.contentMode = .scaleAspectFill
+        ELIVANEVERView.clipsToBounds = true
+        ELIVANEVERView.layer.masksToBounds = true
+        return ELIVANEVERView
+    }()
+
+    let ELIVANEVERdroneIcon: UIImageView = {
+        let ELIVANEVERView = UIImageView()
+        ELIVANEVERView.translatesAutoresizingMaskIntoConstraints = false
+        ELIVANEVERView.contentMode = .scaleAspectFit
+        ELIVANEVERView.image = UIImage(named: "ELIVANEVEdroneFootage")
+        return ELIVANEVERView
+    }()
+
+    let ELIVANEVERartGalleries: UIView = {
+        let ELIVANEVERview = UIView()
+        ELIVANEVERview.translatesAutoresizingMaskIntoConstraints = false
+        ELIVANEVERview.backgroundColor = UIColor(white: 1, alpha: 0.2036)
+        ELIVANEVERview.layer.masksToBounds = true
+        return ELIVANEVERview
+    }()
+
+    let ELIVANEVERlocalTraditions: UILabel = {
+        let ELIVANEVERbel = UILabel()
+        ELIVANEVERbel.translatesAutoresizingMaskIntoConstraints = false
+        ELIVANEVERbel.font = .systemFont(ofSize: 16, weight: .medium)
+        ELIVANEVERbel.textColor = .white
+        return ELIVANEVERbel
+    }()
+
+    let ELIVANEVERetiquetteTips: UIButton = {
+        let ELIVANEVERton = UIButton(type: .custom)
+        ELIVANEVERton.translatesAutoresizingMaskIntoConstraints = false
+        ELIVANEVERton.setBackgroundImage(UIImage(named: "ELIVANEVEinteractiveMaps"), for: .normal)
+        return ELIVANEVERton
+    }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        ELIVANEVERsetupCell()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        ELIVANEVERsetupCell()
+    }
+
+    private func ELIVANEVERsetupCell() {
         self.backgroundColor = .clear
         self.selectionStyle = .none
         
-        ELIVANEVERbookstoreCrawl() 
-        ELIVANEVERseasonalEvents.layer.masksToBounds = true
+        contentView.addSubview(ELIVANEVERseasonalEvents)
+        contentView.addSubview(ELIVANEVERdroneIcon)
+        contentView.addSubview(ELIVANEVERartGalleries)
+        ELIVANEVERartGalleries.addSubview(ELIVANEVERlocalTraditions)
+        contentView.addSubview(ELIVANEVERetiquetteTips)
+        
+        NSLayoutConstraint.activate([
+            ELIVANEVERseasonalEvents.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
+            ELIVANEVERseasonalEvents.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            ELIVANEVERseasonalEvents.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            ELIVANEVERseasonalEvents.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6),
+            
+            ELIVANEVERdroneIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 26),
+            ELIVANEVERdroneIcon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -26),
+            ELIVANEVERdroneIcon.widthAnchor.constraint(equalToConstant: 32),
+            ELIVANEVERdroneIcon.heightAnchor.constraint(equalToConstant: 32),
+            
+            ELIVANEVERartGalleries.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6),
+            ELIVANEVERartGalleries.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            ELIVANEVERartGalleries.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            ELIVANEVERartGalleries.heightAnchor.constraint(equalToConstant: 52),
+            
+            ELIVANEVERlocalTraditions.leadingAnchor.constraint(equalTo: ELIVANEVERartGalleries.leadingAnchor, constant: 14),
+            ELIVANEVERlocalTraditions.trailingAnchor.constraint(equalTo: ELIVANEVERartGalleries.trailingAnchor, constant: -53),
+            ELIVANEVERlocalTraditions.centerYAnchor.constraint(equalTo: ELIVANEVERartGalleries.centerYAnchor),
+            
+            ELIVANEVERetiquetteTips.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -18),
+            ELIVANEVERetiquetteTips.centerXAnchor.constraint(equalTo: ELIVANEVERdroneIcon.centerXAnchor),
+            ELIVANEVERetiquetteTips.widthAnchor.constraint(equalToConstant: 30),
+            ELIVANEVERetiquetteTips.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        ELIVANEVERbookstoreCrawl()
     }
 
-    func ELIVANEVERbookstoreCrawl()  {
+    func ELIVANEVERbookstoreCrawl() {
         ELIVANEVERseasonalEvents.layer.cornerRadius = 24
-        
-        ELIVANEVERartGalleries.layer.masksToBounds = true
         ELIVANEVERartGalleries.layer.cornerRadius = 24
     }
 }
