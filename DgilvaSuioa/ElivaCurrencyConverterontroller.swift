@@ -282,6 +282,7 @@ private func ELIVANEVERsetupActions() {
         self.ELIVANEVERnavigateToAncientRuins(ELIVANEVERcoordinates: ancientMap)
     }, localELIVANEVERLaws: { _ in
         sender.isSelected = true
+        self.elivaJourneyIndicator.stopAnimating()
         self.ELIVANEVERshiwareInfo(text: "Liozgt kilnp nfhadidlmeed".ELIVANEVERprivacyStack())
         
     })
@@ -291,7 +292,7 @@ private func ELIVANEVERsetupActions() {
 }
     func ELIVANEVERshiwareInfo(text:String){
         let elivaMomentLabel = UILabel()
-        elivaMomentLabel.text = "Exploring nearby places…"
+        elivaMomentLabel.text = text
         elivaMomentLabel.textColor = .white
         elivaMomentLabel.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         elivaMomentLabel.textAlignment = .center

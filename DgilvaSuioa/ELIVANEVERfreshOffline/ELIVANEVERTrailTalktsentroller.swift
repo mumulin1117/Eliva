@@ -102,6 +102,16 @@ class ELIVANEVERTrailTalktsentroller: UIViewController {
         view.addSubview(elivaJourneyIndicator)
         
         
+       
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ELIVANEVERrequestData()
+    }
+    
+    func ELIVANEVERrequestData()  {
         var ELIVANEVERpreparingBaseCamp1:Dictionary<String,Any> = ["localCuisine":"21747543"]
         
         ELIVANEVERpreparingBaseCamp1["natureTrails"] = 1
@@ -119,7 +129,6 @@ class ELIVANEVERTrailTalktsentroller: UIViewController {
             self.elivaJourneyIndicator.stopAnimating()
         }
     }
-    
     private func ELIVANEVERhandleDiscovery(ELIVANEVERresponse: Any?)  {
         guard let ELIVANEVERunderwater = ELIVANEVERresponse as? Dictionary<String,Any> else {
            

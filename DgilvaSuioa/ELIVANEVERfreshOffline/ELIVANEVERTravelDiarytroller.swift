@@ -206,66 +206,68 @@ class ELIVANEVERTravelDiarytroller: UIViewController {
             view.addSubview(noDataLabel)
             
             ELIVANEVERsetupELIVANEVERConstraints()
-        }
+       
+    }
         
-        private func ELIVANEVERsetupELIVANEVERConstraints() {
-            let safeArea = view.safeAreaLayoutGuide
+       
+    private func ELIVANEVERsetupELIVANEVERConstraints() {
+        let safeArea = view.safeAreaLayoutGuide
+        
+        NSLayoutConstraint.activate([
+            // Top Icons
+            ELIVANEVEtoiletryKitIV.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            ELIVANEVEtoiletryKitIV.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
+            ELIVANEVEtoiletryKitIV.widthAnchor.constraint(equalToConstant: 49),
+            ELIVANEVEtoiletryKitIV.heightAnchor.constraint(equalToConstant: 32),
             
-            NSLayoutConstraint.activate([
-                // Top Icons
-                ELIVANEVEtoiletryKitIV.topAnchor.constraint(equalTo: safeArea.topAnchor),
-                ELIVANEVEtoiletryKitIV.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
-                ELIVANEVEtoiletryKitIV.widthAnchor.constraint(equalToConstant: 49),
-                ELIVANEVEtoiletryKitIV.heightAnchor.constraint(equalToConstant: 32),
-                
-                actionButton2.centerYAnchor.constraint(equalTo: ELIVANEVEtoiletryKitIV.centerYAnchor),
-                actionButton2.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
-                actionButton2.widthAnchor.constraint(equalToConstant: 37),
-                actionButton2.heightAnchor.constraint(equalToConstant: 37),
-                
-                actionButton1.centerYAnchor.constraint(equalTo: actionButton2.centerYAnchor),
-                actionButton1.trailingAnchor.constraint(equalTo: actionButton2.leadingAnchor, constant: -6),
-                actionButton1.widthAnchor.constraint(equalToConstant: 37),
-                actionButton1.heightAnchor.constraint(equalToConstant: 37),
-                
-                // Profile Section
-                ELIVANEVERsunsetLocations.topAnchor.constraint(equalTo: ELIVANEVEtoiletryKitIV.bottomAnchor, constant: 6),
-                ELIVANEVERsunsetLocations.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
-                ELIVANEVERsunsetLocations.widthAnchor.constraint(equalToConstant: 100),
-                ELIVANEVERsunsetLocations.heightAnchor.constraint(equalToConstant: 100),
-                
-                ELIVANEVERrvParks.topAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.bottomAnchor, constant: -10),
-                ELIVANEVERrvParks.centerXAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.centerXAnchor),
-                ELIVANEVERrvParks.widthAnchor.constraint(equalToConstant: 77),
-                ELIVANEVERrvParks.heightAnchor.constraint(equalToConstant: 24),
-                
-                ELIVANEVERdigitalNomad.topAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.topAnchor),
-                ELIVANEVERdigitalNomad.leadingAnchor.constraint(equalTo: balanceButton.leadingAnchor),
-                ELIVANEVERdigitalNomad.heightAnchor.constraint(equalToConstant: 67),
-                
-                ELIVANEVERmeditationSpots.centerYAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.centerYAnchor),
-                ELIVANEVERmeditationSpots.leadingAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.trailingAnchor, constant: 20),
-                ELIVANEVERmeditationSpots.trailingAnchor.constraint(equalTo: balanceButton.trailingAnchor),
-                ELIVANEVERmeditationSpots.widthAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.widthAnchor),
-                ELIVANEVERmeditationSpots.heightAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.heightAnchor),
-                
-                balanceButton.topAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.bottomAnchor, constant: 8),
-                balanceButton.leadingAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.trailingAnchor, constant: 26),
-                balanceButton.widthAnchor.constraint(equalToConstant: 191),
-                balanceButton.heightAnchor.constraint(equalToConstant: 39),
-                balanceButton.bottomAnchor.constraint(equalTo: ELIVANEVERrvParks.bottomAnchor),
-                
-                // Post Section
-                postLabel.topAnchor.constraint(equalTo: ELIVANEVERrvParks.bottomAnchor, constant: 18),
-                postLabel.leadingAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.leadingAnchor),
-                
-                noDataImageView.topAnchor.constraint(equalTo: postLabel.bottomAnchor, constant: 50),
-                noDataImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                noDataImageView.widthAnchor.constraint(equalToConstant: 87),
-                noDataImageView.heightAnchor.constraint(equalToConstant: 98),
-                
-                noDataLabel.topAnchor.constraint(equalTo: noDataImageView.bottomAnchor, constant: 14),
-                noDataLabel.centerXAnchor.constraint(equalTo: noDataImageView.centerXAnchor)
-            ])
-        }
+            actionButton2.centerYAnchor.constraint(equalTo: ELIVANEVEtoiletryKitIV.centerYAnchor),
+            actionButton2.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
+            actionButton2.widthAnchor.constraint(equalToConstant: 37),
+            actionButton2.heightAnchor.constraint(equalToConstant: 37),
+            
+            actionButton1.centerYAnchor.constraint(equalTo: actionButton2.centerYAnchor),
+            actionButton1.trailingAnchor.constraint(equalTo: actionButton2.leadingAnchor, constant: -6),
+            actionButton1.widthAnchor.constraint(equalToConstant: 37),
+            actionButton1.heightAnchor.constraint(equalToConstant: 37),
+            
+            // Profile Section
+            ELIVANEVERsunsetLocations.topAnchor.constraint(equalTo: ELIVANEVEtoiletryKitIV.bottomAnchor, constant: 6),
+            ELIVANEVERsunsetLocations.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
+            ELIVANEVERsunsetLocations.widthAnchor.constraint(equalToConstant: 100),
+            ELIVANEVERsunsetLocations.heightAnchor.constraint(equalToConstant: 100),
+            
+            ELIVANEVERrvParks.topAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.bottomAnchor, constant: -10),
+            ELIVANEVERrvParks.centerXAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.centerXAnchor),
+            ELIVANEVERrvParks.widthAnchor.constraint(equalToConstant: 77),
+            ELIVANEVERrvParks.heightAnchor.constraint(equalToConstant: 24),
+            
+            ELIVANEVERdigitalNomad.topAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.topAnchor),
+            ELIVANEVERdigitalNomad.leadingAnchor.constraint(equalTo: balanceButton.leadingAnchor),
+            ELIVANEVERdigitalNomad.heightAnchor.constraint(equalToConstant: 67),
+            
+            ELIVANEVERmeditationSpots.centerYAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.centerYAnchor),
+            ELIVANEVERmeditationSpots.leadingAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.trailingAnchor, constant: 20),
+            ELIVANEVERmeditationSpots.trailingAnchor.constraint(equalTo: balanceButton.trailingAnchor),
+            ELIVANEVERmeditationSpots.widthAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.widthAnchor),
+            ELIVANEVERmeditationSpots.heightAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.heightAnchor),
+            
+            balanceButton.topAnchor.constraint(equalTo: ELIVANEVERdigitalNomad.bottomAnchor, constant: 8),
+            balanceButton.leadingAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.trailingAnchor, constant: 26),
+            balanceButton.widthAnchor.constraint(equalToConstant: 191),
+            balanceButton.heightAnchor.constraint(equalToConstant: 39),
+            balanceButton.bottomAnchor.constraint(equalTo: ELIVANEVERrvParks.bottomAnchor),
+            
+            // Post Section
+            postLabel.topAnchor.constraint(equalTo: ELIVANEVERrvParks.bottomAnchor, constant: 18),
+            postLabel.leadingAnchor.constraint(equalTo: ELIVANEVERsunsetLocations.leadingAnchor),
+            
+            noDataImageView.topAnchor.constraint(equalTo: postLabel.bottomAnchor, constant: 50),
+            noDataImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noDataImageView.widthAnchor.constraint(equalToConstant: 87),
+            noDataImageView.heightAnchor.constraint(equalToConstant: 98),
+            
+            noDataLabel.topAnchor.constraint(equalTo: noDataImageView.bottomAnchor, constant: 14),
+            noDataLabel.centerXAnchor.constraint(equalTo: noDataImageView.centerXAnchor)
+        ])
+    }
 }

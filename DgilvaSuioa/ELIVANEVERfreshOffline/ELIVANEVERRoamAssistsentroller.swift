@@ -121,6 +121,8 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
         let bELIVANEVERtn = UIButton()
         bELIVANEVERtn.setImage(UIImage(named: "ELIVANEVEinteractiveMaps"), for: .normal)
         bELIVANEVERtn.translatesAutoresizingMaskIntoConstraints = false
+        bELIVANEVERtn.translatesAutoresizingMaskIntoConstraints = false
+        bELIVANEVERtn.addTarget(self, action: #selector(ELIVANEVERetiquetteTipsTapped), for: .touchUpInside)
         return bELIVANEVERtn
     }()
 //    
@@ -144,22 +146,33 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
             return ELIVANEVERcv
         }()
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ELIVANEVERrequestData()
+    }
     private func ELIVANEVERupdateinghud()  {
         let ELIVANEVERupword = Array(ELIVANEVERReadtic.reversed())
         
         let onre = (ELIVANEVERupword.first?["panoramicViews"] as? Array<String>)?.first ?? ""
         
-        let erre = (ELIVANEVERupword[1]["panoramicViews"] as? Array<String>)?.first ?? ""
+       
         
-        let erresse = (ELIVANEVERupword[2]["panoramicViews"] as? Array<String>)?.first ?? ""
+        
         
         self.ELIVANEVERmetaphorical(onre, ELIVANEVERfreshOffline: nil,ELIVANEVERfresnnBUtton: ELIVANEVERwhaleWatching) 
         
-        self.ELIVANEVERmetaphorical(erre, ELIVANEVERfreshOffline: nil,ELIVANEVERfresnnBUtton: ELIVANEVERwhaleWatching1)
-        
-        self.ELIVANEVERmetaphorical(erresse, ELIVANEVERfreshOffline: nil,ELIVANEVERfresnnBUtton: ELIVANEVERwhaleWatching2)
-        
+        if ELIVANEVERupword.count > 1 {
+            let erre = (ELIVANEVERupword[1]["panoramicViews"] as? Array<String>)?.first ?? ""
+            self.ELIVANEVERmetaphorical(erre, ELIVANEVERfreshOffline: nil,ELIVANEVERfresnnBUtton: ELIVANEVERwhaleWatching1)
+          
+        }
+         
+        if ELIVANEVERupword.count > 2  {
+            let erresse = (ELIVANEVERupword[2]["panoramicViews"] as? Array<String>)?.first ?? ""
+            self.ELIVANEVERmetaphorical(erresse, ELIVANEVERfreshOffline: nil,ELIVANEVERfresnnBUtton: ELIVANEVERwhaleWatching2)
+         
+        }
+          
         self.ELIVANEVERmetaphorical(onre, ELIVANEVERfreshOffline: nil,ELIVANEVERfresnnBUtton: ELIVANEVERBigPicRetreats)
         ELIVANEVEtitlerade.text = ELIVANEVERReadtic.first?["petFriendly"] as? String
 //
@@ -175,17 +188,18 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
         
         var dymELIVANEVERID:Int = 0
         
-        if ELIVANEVERfvdjng.tag == 10{
+        if ELIVANEVERfvdjng.tag == 10  && ELIVANEVERupword.count > 0{
             dymELIVANEVERID = (ELIVANEVERupword.first?["digitalNomad"] as? Int ?? 0)
             
         }
         
-        if ELIVANEVERfvdjng.tag == 11{
+        if ELIVANEVERfvdjng.tag == 11  && ELIVANEVERupword.count > 1{
             dymELIVANEVERID = (ELIVANEVERupword[1]["digitalNomad"] as? Int ?? 0)
             
         }
         
-        if ELIVANEVERfvdjng.tag == 12{
+       
+        if ELIVANEVERfvdjng.tag == 12 && ELIVANEVERupword.count > 2{
             dymELIVANEVERID = (ELIVANEVERupword[2]["digitalNomad"] as? Int ?? 0)
             
         }
@@ -196,21 +210,18 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        ELIVANEVERsetupUI()
        
         setupConstraints()
         elivaJourneyIndicator.hidesWhenStopped = true
         elivaJourneyIndicator.center = view.center
       
         view.addSubview(elivaJourneyIndicator)
-        let ELIVANEVERringBaseCamp:Dictionary<String,Any> = ["itineraryPlanner":"21747543"]
        
         
         
         
         ELIVANEVERhandicraftWorkshops()
-        var ELIVANEVERringBaseCamp1:Dictionary<String,Any> = ["localCuisine":"21747543"]
-        ELIVANEVERringBaseCamp1["natureTrails"] = 1
         
         ELIVANEVERreefRestoration()
         ELIVANEVERkosherEateries()
@@ -223,10 +234,27 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
         ELIVANEVERwhaleWatching2.tag = 12
         ELIVANEVERBigPicRetreats.tag = 10
         
+        
+        
+        ELIVANEVERwhaleWatching1.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)
+        
+        
+      
+        ELIVANEVERwhaleWatching2.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)
+        ELIVANEVERBigPicRetreats.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)
+     
+    }
+    
+    
+    func ELIVANEVERrequestData()  {
+        let ELIVANEVERringBaseCamp:Dictionary<String,Any> = ["itineraryPlanner":"21747543"]
+      
+        var ELIVANEVERringBaseCamp1:Dictionary<String,Any> = ["localCuisine":"21747543"]
+        ELIVANEVERringBaseCamp1["natureTrails"] = 1
+       
         ELIVANEVERringBaseCamp1["wildlifeSpotting"] = 22
         ELIVANEVERringBaseCamp1["streetFoodGuide"] = 1
-       
-        
+     
         ELIVANEVERFreeshoffCell.baggageELIVANEVERAllowance(visaELIVANEVERAssistance: "/wulhlz/dvqiag", travelELIVANEVERInsurance: ELIVANEVERringBaseCamp) { heritag in
             self.elivaJourneyIndicator.stopAnimating()
             
@@ -243,7 +271,6 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
         } localELIVANEVERLaws: { unesco in
             self.elivaJourneyIndicator.stopAnimating()
         }
-        ELIVANEVERwhaleWatching1.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)
         
         
         ELIVANEVERFreeshoffCell.baggageELIVANEVERAllowance(visaELIVANEVERAssistance: "/zuzshoez/iyeco", travelELIVANEVERInsurance: ELIVANEVERringBaseCamp1) { heritag in
@@ -253,11 +280,8 @@ class ELIVANEVERRoamAssistsentroller: UIViewController {
         } localELIVANEVERLaws: { unesco in
             self.elivaJourneyIndicator.stopAnimating()
         }
-        ELIVANEVERwhaleWatching2.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)
-        ELIVANEVERBigPicRetreats.addTarget(self, action: #selector(ELIVANEVERsjisnubdef(ELIVANEVERfvdjng:)), for: .touchUpInside)
-     
     }
-    private func setupUI() {
+    private func ELIVANEVERsetupUI() {
         
             view.backgroundColor = UIColor(red: 0.09, green: 0.10, blue: 0.13, alpha: 1.0)
             
